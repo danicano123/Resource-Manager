@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ThemedSpinnerAdapter;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,7 +15,7 @@ import java.util.List;
 public class Catalogo extends AppCompatActivity {
     final DB_Helper helperA = new DB_Helper(this);
     public static int ayuda;
-
+     LinearLayout l1,l2,l3;
     TextView tvNombre1, tvref1, tvpcompra1, tvpventa1, tvcantidad1, tvproveedor1,
             tvNombre2, tvref2, tvpcompra2, tvpventa2, tvcantidad2, tvproveedor2,
             tvNombre3, tvref3, tvpcompra3, tvpventa3, tvcantidad3, tvproveedor3;
@@ -24,7 +25,9 @@ public class Catalogo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalogo);
 
-
+        l1 = (LinearLayout)findViewById(R.id.l1);
+        l2 = (LinearLayout)findViewById(R.id.l2);
+        l3 = (LinearLayout)findViewById(R.id.l3);
         tvNombre1 = (TextView) findViewById(R.id.textoNombre1);
         tvNombre2 = (TextView) findViewById(R.id.textoNombre2);
         tvNombre3 = (TextView) findViewById(R.id.textoNombre3);
@@ -53,6 +56,7 @@ public class Catalogo extends AppCompatActivity {
             tvpventa1.setText(DB_Helper.pVentaA);
             tvcantidad1.setText(DB_Helper.cantidadA);
             tvproveedor1.setText(DB_Helper.proveedorA.toString());
+            l1.setVisibility(View.VISIBLE);
 
         } catch (Exception e){}
         try {
@@ -63,6 +67,7 @@ public class Catalogo extends AppCompatActivity {
             tvpventa2.setText(DB_Helper.pVentaA);
             tvcantidad2.setText(DB_Helper.cantidadA);
             tvproveedor2.setText(DB_Helper.proveedorA);
+            l2.setVisibility(View.VISIBLE);
 
         } catch (Exception e){}
 
@@ -74,6 +79,7 @@ public class Catalogo extends AppCompatActivity {
             tvpventa3.setText(DB_Helper.pVentaA);
             tvcantidad3.setText(DB_Helper.cantidadA);
             tvproveedor3.setText(DB_Helper.proveedorA);
+            l3.setVisibility(View.VISIBLE);
 
         }catch (Exception e){}
         bd.close();

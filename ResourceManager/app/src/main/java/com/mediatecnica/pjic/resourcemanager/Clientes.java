@@ -5,10 +5,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Clientes extends AppCompatActivity {
     final clientesDB helperC = new clientesDB(this);
+
+    LinearLayout l1,l2,l3;
     TextView tvNombre1, tvcedula1, tvtel1, tvcorreo1,
             tvNombre2, tvcedula2, tvtel2, tvcorreo2,
     tvNombre3, tvcedula3, tvtel3, tvcorreo3;
@@ -18,7 +21,9 @@ public class Clientes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clientes);
-
+        l1 = (LinearLayout)findViewById(R.id.l11);
+        l2 = (LinearLayout)findViewById(R.id.l22);
+        l3 = (LinearLayout)findViewById(R.id.l33);
         tvNombre1 = (TextView) findViewById(R.id.textnombre1);
         tvNombre2 = (TextView) findViewById(R.id.textnombre2);
         tvNombre3 = (TextView) findViewById(R.id.textnombre3);
@@ -41,6 +46,7 @@ public class Clientes extends AppCompatActivity {
             tvcedula1.setText(clientesDB.identificacionC);
             tvtel1.setText(clientesDB.telefonoC);
             tvcorreo1.setText(clientesDB.correoC);
+            l1.setVisibility(View.VISIBLE);
 
         } catch (Exception e){}
         try {
@@ -50,6 +56,7 @@ public class Clientes extends AppCompatActivity {
             tvcedula2.setText(clientesDB.identificacionC);
             tvtel2.setText(clientesDB.telefonoC);
             tvcorreo2.setText(clientesDB.correoC);
+            l2.setVisibility(View.VISIBLE);
 
         } catch (Exception e){}
 
@@ -60,6 +67,7 @@ public class Clientes extends AppCompatActivity {
             tvcedula3.setText(clientesDB.identificacionC);
             tvtel3.setText(clientesDB.telefonoC);
             tvcorreo3.setText(clientesDB.correoC);
+            l3.setVisibility(View.VISIBLE);
 
         }catch (Exception e){}
         bd.close();

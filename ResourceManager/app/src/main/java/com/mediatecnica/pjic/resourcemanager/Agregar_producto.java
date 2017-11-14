@@ -62,10 +62,10 @@ public class Agregar_producto extends AppCompatActivity {
         Intent intent = new Intent(Agregar_producto.this, Catalogo.class);
         startActivity(intent);
     }
-   /* public void ir_movimiento(View v) {
-        Intent intent = new Intent(Agregar_producto.this, Clientes.class);
+   public void ir_movimiento(View v) {
+        Intent intent = new Intent(Agregar_producto.this, AgregarCliente.class);
         startActivity(intent);
-    }*/
+    }
 
    public void insertArticulos(View v){
 

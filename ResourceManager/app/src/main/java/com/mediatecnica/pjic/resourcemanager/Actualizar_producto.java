@@ -104,8 +104,8 @@ public class Actualizar_producto extends AppCompatActivity {
         Intent intent = new Intent(Actualizar_producto.this, Catalogo.class);
         startActivity(intent);
     }
-   /* public void ir_movimiento(View v) {
-        Intent intent = new Intent(Actualizar_producto.this, movimiento.class);
+   public void ir_movimiento(View v) {
+        Intent intent = new Intent(Actualizar_producto.this, AgregarCliente.class);
         startActivity(intent);
-    }*/
+    }
 }

@@ -107,6 +107,7 @@ public class Venta extends AppCompatActivity {
         if (Integer.parseInt(canti) < Integer.parseInt(DB_Helper.cantidadA)) {
             helperV.addVenta(new ventas_Constructor(DB_Helper.nombreA, DB_Helper.refA, Integer.toString(aPagar), canti, ConfirmaNombre.getText().toString(), DB_Helper.proveedorA));
             Toast.makeText(getApplicationContext(), "El articulo "+DB_Helper.nombreA+" ha sido vendido con éxito", Toast.LENGTH_SHORT).show();
+            helperA.upDateArticulo(new Articulos_Constructor(DB_Helper.nombreA,DB_Helper.refA,DB_Helper.pCompraA,DB_Helper.pVentaA,Integer.toString(Integer.parseInt(DB_Helper.cantidadA)- Integer.parseInt(canti)),proveedor));
             Intent intent = new Intent(Venta.this, Ventas.class);
             startActivity(intent);
 

@@ -5,12 +5,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Ventas extends AppCompatActivity {
     TextView tvNombre1, tvref1, tvpago1, tvcantidad1, tvcliente1, tvproveedor1,
              tvNombre2, tvref2, tvpago2, tvcantidad2, tvcliente2, tvproveedor2,
              tvNombre3, tvref3, tvpago3, tvcantidad3, tvcliente3, tvproveedor3;
+    LinearLayout l1,l2,l3;
     final ventasDB helperV = new ventasDB(this);
 
     @Override
@@ -35,6 +37,9 @@ public class Ventas extends AppCompatActivity {
         tvproveedor1 = (TextView) findViewById(R.id.txproveedor1);
         tvproveedor2 = (TextView) findViewById(R.id.txproveedor2);
         tvproveedor3 = (TextView) findViewById(R.id.txproveedor3);
+        l1 = (LinearLayout)findViewById(R.id.l111);
+        l2 = (LinearLayout)findViewById(R.id.l222);
+        l3 = (LinearLayout)findViewById(R.id.l333);
         SQLiteDatabase bd = helperV.getReadableDatabase();
 
         try {
@@ -46,6 +51,7 @@ public class Ventas extends AppCompatActivity {
             tvcantidad1.setText(ventasDB.cantidadV);
             tvcliente1.setText(ventasDB.clienteV);
             tvproveedor1.setText(ventasDB.proveedorV);
+            l1.setVisibility(View.VISIBLE);
 
         } catch (Exception e){}
         try {
@@ -57,6 +63,7 @@ public class Ventas extends AppCompatActivity {
             tvcantidad2.setText(ventasDB.cantidadV);
             tvcliente2.setText(ventasDB.clienteV);
             tvproveedor2.setText(ventasDB.proveedorV);
+            l2.setVisibility(View.VISIBLE);
 
         } catch (Exception e){}
 
@@ -69,6 +76,7 @@ public class Ventas extends AppCompatActivity {
             tvcantidad3.setText(ventasDB.cantidadV);
             tvcliente3.setText(ventasDB.clienteV);
             tvproveedor3.setText(ventasDB.proveedorV);
+            l3.setVisibility(View.VISIBLE);
 
         }catch (Exception e){}
         bd.close();

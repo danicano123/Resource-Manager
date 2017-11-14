@@ -38,6 +38,8 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/l111"
+                        android:visibility="invisible"
                         android:layout_width="340dp"
                         android:layout_height="345dp"
                         android:layout_gravity="center"
@@ -196,6 +198,8 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/l222"
+                        android:visibility="invisible"
                         android:layout_width="340dp"
                         android:layout_height="345dp"
                         android:layout_gravity="center"
@@ -354,6 +358,8 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/l333"
+                        android:visibility="invisible"
                         android:layout_width="340dp"
                         android:layout_height="345dp"
                         android:layout_gravity="center"
